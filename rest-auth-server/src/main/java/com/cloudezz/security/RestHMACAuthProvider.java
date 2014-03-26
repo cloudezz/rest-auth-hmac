@@ -17,9 +17,6 @@ public class RestHMACAuthProvider implements AuthenticationProvider {
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
     RestHMACAuthToken restToken = (RestHMACAuthToken) authentication;
 
-    // api key (aka username)
-    String apiKey = restToken.getPrincipal();
-    
     // hashed blob
     RestHMACCredentials credentials = restToken.getCredentials();
 
@@ -36,11 +33,11 @@ public class RestHMACAuthProvider implements AuthenticationProvider {
     String hmac = HMACUtils.calculateHMAC(secret, credentials.getRequestData());
     // check if signatures match
 
-   /* if (!credentials.getSignature().equals(hmac)) {
+    if (!credentials.getSignature().equals(hmac)) {
       throw new BadHMACAuthRequestException("Auth Failed : Invalid HMAC signature.");
-    }*/
+    }
 
-    
+
     return restToken;
   }
 

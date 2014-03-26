@@ -32,8 +32,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
+			<groupId>com.cloudezz.security</groupId>
+			<artifactId>rest-auth-commons</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 
