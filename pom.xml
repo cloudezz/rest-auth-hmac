@@ -38,6 +38,7 @@
 
 
 	<modules>
+		<module>rest-auth-commons</module>
 		<module>rest-auth-client</module>
 		<module>rest-auth-server</module>
 	</modules>
